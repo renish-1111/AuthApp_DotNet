@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.Extensions.Configuration;
 using System.Net;
 using System.Net.Mail;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
 
 
@@ -11,12 +8,11 @@ namespace IdentityApiExample.Services
 {
     public class EmailSender : IEmailSender
     {
+       
         private readonly string _smtpHost;
         private readonly int _smtpPort;
         private readonly string _smtpUsername;
         private readonly string _smtpPassword;
-        private readonly string _smtSubject;
-        private readonly string _smtpBody;
 
         public EmailSender(IConfiguration Configuration)
         {
@@ -24,8 +20,6 @@ namespace IdentityApiExample.Services
             _smtpPort = int.Parse(Configuration["EmailSetting:SmtpPort"]);
             _smtpUsername = Configuration["EmailSetting:SmtpUsername"];
             _smtpPassword = Configuration["EmailSetting:SmtpPassword"];
-            _smtSubject = Configuration["EmailSetting:SmtpSubject"];
-            _smtpBody = Configuration["EmailSetting:SmtpBody"];
         }
 
         
