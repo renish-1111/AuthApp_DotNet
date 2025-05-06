@@ -52,3 +52,6 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+AuthApp/appsettings.json
+/.vs
+AuthApp/appsettings.Development.json
